@@ -136,6 +136,29 @@
 	};
 
 	/**
+	 * Gets the type of a given value
+	 * @private
+	 * @param {mixed} value
+	 * @param {Boolean} disableTypesafe Compare numbers with == if true
+	 * @returns {String} Object type
+	 */
+	Type.getType = function (value, disableTypesafe) {
+		if (value !== undefined && value !== null) {
+			if (Type.isNumber(value, disableTypesafe)) {
+				return 'number';
+			} else if (Type.isString(value)) {
+				return 'string';
+			} else if (Type.isArray(value)) {
+				return 'array';
+			} else if (Type.isFunction(value)) {
+				return 'function';
+			} else if (typeof value === 'object') {
+				return value.getType() || 'object';
+			}
+		}
+	};
+
+	/**
 	 * Check if string is a hexidecimal value
 	 * @returns {Boolean}
 	 */
