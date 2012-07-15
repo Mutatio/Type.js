@@ -76,6 +76,28 @@
 	};
 
 	/**
+	 * Checks if value is float type
+	 * @static
+	 * @param {mixed} value
+	 * @param {Boolean} disableTypesafe If true do numerical comparison using "=="
+	 * @returns {Boolean}
+	 */
+	Type.isFloat = function (value, disableTypesafe) {
+		return Type.isNumber(value, disableTypesafe) && value % 1 !== 0;
+	};
+
+	/**
+	 * Checks if value is integer type
+	 * @static
+	 * @param {mixed} value
+	 * @param {Boolean} disableTypesafe If true do numerical comparison using "=="
+	 * @returns {Boolean}
+	 */
+	Type.isInteger = function (value, disableTypesafe) {
+		return Type.isNumber(value, disableTypesafe) && value % 1 === 0;
+	};
+
+	/**
 	 * Checks if value is scalar value
 	 * @static
 	 * @param {mixed} value
