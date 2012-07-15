@@ -134,4 +134,12 @@
 	Type.isElement = function (value) {
 		return value instanceof HTMLElement;
 	};
+
+	/**
+	 * Check if string is a hexidecimal value
+	 * @returns {Boolean}
+	 */
+	String.prototype.isHex = function () {
+		return (/^([0-9a-f]+)$/i).test(this);
+	};
 })(this);
