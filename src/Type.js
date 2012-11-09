@@ -15,6 +15,7 @@
  */
 (function ($, undefined) {
 	'use strict';
+
 	/**
 	 * Style.js major version
 	 * @private
